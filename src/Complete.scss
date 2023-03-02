@@ -1,0 +1,42 @@
+@import  './_variables';
+
+.complete-page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .done-logo {
+    margin-bottom: 1.5rem;
+  }
+  .title {
+    font-size: 2rem;
+    color: $very-dark-violet;
+    letter-spacing: 0.15rem;
+    margin-bottom: 1rem;
+  }
+  .text {
+    font-size: 1.2rem;
+    color: $dark-grayish-violet;
+    margin-bottom: 2rem;
+  }
+  .btn-continue {
+    height: 35px;
+    width: 350px;
+    color: white;
+    background-color: black;
+    font-size: 1.4rem;
+    border: 1px solid black;
+    border-radius: 5px;
+
+    &:hover {
+      border-color: white;
+      font-style: italic;
+    }
+    &:focus {
+      border-color: white;
+      font-style: italic;
+      outline: none;
+    }
+  }
+}

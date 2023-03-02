@@ -16,23 +16,28 @@
     display: flex;
     justify-content: center;
 
-    .card-name{
+    .card-logo {
+      position: absolute;
+      top: 25px;
+      left: 47px;
+    }
+    .card-name {
       position: absolute;
       bottom: 25px;
       left: 47px;
     }
-    .card-num{
+    .card-num {
       position: absolute;
       bottom: 60px;
       font-size: 1.8rem;
       letter-spacing: .2rem;
     }
-    .card-exp-m{
+    .card-exp-m {
       position: absolute;
       bottom: 25px;
       right: 70px;
     }
-    .card-exp-y{
+    .card-exp-y {
       position: absolute;
       bottom: 25px;
       right: 47px;

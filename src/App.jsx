@@ -3,6 +3,7 @@ import './App.scss';
 import CardFront from './CardFront';
 import CardBack from './CardBack';
 import Form from './Form';
+import Complete from './Complete';
 
 function App() {
   const baseForm = {
@@ -13,6 +14,7 @@ function App() {
     cardCVC:""
   }
   const [form, setForm] = useState({...baseForm});
+  const [confirmed, setConfirmed] = useState(false)
 
   return (
     <div className="app">
@@ -22,7 +24,10 @@ function App() {
         <CardBack form={form}/>
       </div>
       <div className='right-side'>
-        <Form form={form} setForm={setForm}/>
+        {confirmed ?
+          <Complete baseForm={baseForm} setForm={setForm} setConfirmed={setConfirmed}/> :
+          <Form form={form} setForm={setForm} setConfirmed={setConfirmed}/>
+        }
       </div>
     </div>
   );

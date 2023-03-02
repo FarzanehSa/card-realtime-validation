@@ -1,13 +1,12 @@
 import { useState } from 'react';
 import './Form.scss';
 
-function Form({form, setForm}) {
+function Form({form, setForm, setConfirmed}) {
 
   const today = new Date();
-
   const year = String(today.getFullYear()).slice(2);
-  const month = today.getMonth();
-  
+  const month = today.getMonth() + 1;
+
   const regexNum = /^[0-9]{16}$/;
   const regexDate = /^[0-9]{2}$/;
   const regexCVC = /^[0-9]{3}$/;
@@ -23,11 +22,9 @@ function Form({form, setForm}) {
     setForm({...form, [name]: value});
   }
 
-  console.log(form);
   const handleChangeNum = (e) => {
     resetError();
     const {name, value} = e.target;
-    // if (value.length === 5 || value.length === 9 || value.length === 14) {
     if (value.length === 5) {
       if (value[4] !== ' ') {
         setForm({...form, [name]: value.slice(0, -1) + " " + value.slice(-1)});
@@ -71,39 +68,72 @@ function Form({form, setForm}) {
     setEC({error: false, msg: ""});
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const checkName = () => {
     if (!form.cardName) {
       setEName({error: true, msg: "Can't be blank!"});
+      return false;
     }
+    return true;
+  }
+  const checkNum = () => {
     if (!form.cardNum) {
       setENum({error: true, msg: "Can't be blank!"});
+      return false;
     } else if (!regexNum.test(form.cardNum.split(' ').join(''))) {
       setENum({error: true, msg: "Invalid format"});
+      return false;
     }
+    return true;
+  }
+  const checkDate = () => {
     if (!form.cardExpM) {
       setEDate(pre => ({...pre, errorM: true, msg: "Can't be blank!"}));
+      return false;
     } else if (!form.cardExpY) {
       setEDate(pre => ({...pre, errorY: true, msg: "Can't be blank!"}));
+      return false;
     } else if (!regexDate.test(form.cardExpM)) {
       setEDate(pre => ({...pre, errorM: true, msg: "Invalid format"}));
+      return false;
     } else if (!regexDate.test(form.cardExpY)) {
       setEDate(pre => ({...pre, errorY: true, msg: "Invalid format"}));
+      return false;
     } else if (Number(form.cardExpY) === Number(year) && Number(form.cardExpM) < month) {
       setEDate(pre => ({...pre, errorM: true, msg: "Invalid date"}));
+      return false;
     } else if (Number(form.cardExpM) > 12 || Number(form.cardExpM) < 1) {
       setEDate(pre => ({...pre, errorM: true, msg: "Invalid date"}));
+      return false;
     } else {
       const maxYear = Number(year) + 10;
       if ((maxYear <100 && (Number(form.cardExpY) > maxYear || Number(form.cardExpY) < Number(year))) 
             || (maxYear >= 100 && Number(form.cardExpY) > maxYear % 100 && Number(form.cardExpY) < Number(year)) ) {
         setEDate(pre => ({...pre, errorY: true, msg: "Invalid date"}));
+        return false;
       }
     }
+    return true;
+  }
+  const checkCVC = () => {
     if (!form.cardCVC) {
       setEC({error: true, msg: "Can't be blank!"});
+      return false;
     } else if (!regexCVC.test(form.cardCVC)) {
       setEC({error: true, msg: "Invalid format"});
+      return false;
+    }
+    return true;
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const resultName = checkName();
+    const resultNum = checkNum();
+    const resultDate = checkDate();
+    const resultCVC = checkCVC();
+
+    if (resultName && resultNum && resultDate && resultCVC) {
+      setConfirmed(true);
     }
   }
 

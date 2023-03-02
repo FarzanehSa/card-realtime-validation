@@ -1,9 +1,11 @@
+import { ReactComponent as Logo } from './card-logo.svg';
 import './CardFront.scss';
 
 function CardFront({form}) {
   return (
     <div className='card-front-container'>
       <div className="card-front">
+        <Logo className="card-logo"/>
         {form.cardName ?
           <span className='card-name'>{form.cardName}</span> :
           <span className='card-name'>CARDHOLDER NAME</span>

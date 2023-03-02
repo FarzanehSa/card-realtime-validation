@@ -40,6 +40,21 @@
     .btn-confirm {
       height: 35px;
       width: 350px;
+      color: white;
+      background-color: black;
+      font-size: 1.4rem;
+      border: 1px solid black;
+      border-radius: 5px;
+
+      &:hover {
+        border-color: white;
+        font-style: italic;
+      }
+      &:focus {
+        border-color: white;
+        font-style: italic;
+        outline: none;
+      }
     }
     .input {
       border: 1px solid black;

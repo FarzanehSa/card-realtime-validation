@@ -1,0 +1,23 @@
+@import  './_variables';
+
+.card-back-container {
+  flex: 1;
+  margin-right: 10%;
+  z-index: 1;
+
+  .card-back {
+    background-image: url('../public/bg-card-back.png');
+    background-repeat: no-repeat;
+    height: 245px;
+    width: 447px;
+    position: relative;
+  
+    .card-cvc {
+      position: absolute;
+      top: 108px;
+      right: 50px;
+      font-size: 1.3rem;
+      color: $White;
+    }
+}
+}

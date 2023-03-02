@@ -1,0 +1,41 @@
+@import  './_variables';
+
+.card-front-container {
+  margin-right: 20%;
+  flex: 1;
+  z-index: 1;
+
+  .card-front {
+    background-image: url('../public/bg-card-front.png');
+    background-repeat: no-repeat;
+    height: 245px;
+    width: 447px;
+    position: relative;
+    font-size: 1.2rem;
+    color: $White;
+    display: flex;
+    justify-content: center;
+
+    .card-name{
+      position: absolute;
+      bottom: 25px;
+      left: 47px;
+    }
+    .card-num{
+      position: absolute;
+      bottom: 60px;
+      font-size: 1.8rem;
+      letter-spacing: .2rem;
+    }
+    .card-exp-m{
+      position: absolute;
+      bottom: 25px;
+      right: 70px;
+    }
+    .card-exp-y{
+      position: absolute;
+      bottom: 25px;
+      right: 47px;
+    }
+  }
+}

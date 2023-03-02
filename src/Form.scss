@@ -1,0 +1,96 @@
+@import  './_variables';
+
+.main-form {
+  border: $test;
+  height: 100%;
+  width: 100%;
+  min-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+
+    .label {
+      margin-bottom: 0.2rem;
+    }
+
+    #card-holder {
+      width: 350px;
+    }
+    #card-num {
+      width: 350px;
+    }
+    #card-exp-m {
+      width: 80px;
+      margin-right: 0.2rem;
+    }
+    #card-exp-y {
+      width: 80px;
+      margin-left: 0.2rem;
+    }
+    #card-cvc {
+      width: 160px;
+    }
+    .btn-confirm {
+      height: 35px;
+      width: 350px;
+    }
+    .input {
+      border: 1px solid black;
+      padding-left: 0.5rem;
+      height: 35px;
+      font-size: 1.3rem;
+
+      &:focus {
+        border-color: $main-font-color;
+        outline: none;
+      }
+    }
+    .input-error {
+      border-color: $error-font-color;
+    }
+
+    .i-error {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1rem;
+
+      .error {
+        color: $error-font-color;
+        font-size: 1rem;
+        margin-top: 0.5rem;
+      }
+    }
+
+    .form-down {
+      width: 100%;
+      display: flex;
+      align-self: center;
+      justify-content: space-between;
+
+      .input-group-l {
+        display: flex;
+        flex-direction: column;
+        margin-right: 0.2rem;
+      }
+      .input-group-r {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0.2rem;
+      }
+
+      .inputs {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-self: center;
+      }
+    }
+  }
+}

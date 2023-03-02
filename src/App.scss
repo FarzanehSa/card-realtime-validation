@@ -1,5 +1,37 @@
-.App {
-  height: 100px;
-  width: 100px;
-  background-color: red;
+@import  './_variables';
+
+.app {
+  border: $test;
+  height: 100vh;
+  min-height: 600px;
+  width: 100vw;
+  font-family: $font-family;
+  font-weight: $font-Weights;
+  color: $main-font-color;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+
+  .main-bg {
+    background-image: url( '../public/bg-main-desktop.png');
+    height: 100%;
+    min-width: 33%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+  }
+
+  .left-side {
+    border: $test1;
+    flex: 1;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    min-width: 500px;
+  }
+  .right-side {
+    border: $test2;
+    flex: 1;
+  }
 }

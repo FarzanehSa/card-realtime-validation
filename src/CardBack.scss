@@ -1,15 +1,19 @@
 @import  './_variables';
 
 .card-back-container {
-  flex: 1;
-  margin-right: 10%;
+  // border: $test;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
   z-index: 1;
 
   .card-back {
     background-image: url('../public/bg-card-back.png');
+    background-size: contain;
     background-repeat: no-repeat;
     height: 245px;
-    width: 447px;
+    width: 445px;
     position: relative;
   
     .card-cvc {
@@ -19,5 +23,45 @@
       font-size: 1.3rem;
       color: $White;
     }
+  }
 }
+
+@media screen and (max-width: 900px) {
+  .card-back-container {
+    padding: 15px;
+    z-index: 1;
+
+    .card-back {
+      height: 170px;
+      width: 300px;
+    
+      .card-cvc {
+        top: 69px;
+        right: 40px;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 660px) {
+
+  .card-back-container {
+    width: 375px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0px 20px 0px 0px;
+    top: 30px;
+  
+    .card-back {
+      height: 135px;
+      width: 250px;
+    
+      .card-cvc {
+        top: 55px;
+        right: 37px;
+        font-size: 1rem;
+      }
+    }
+  }
 }

@@ -1,9 +1,9 @@
 @import  './_variables';
 
 .app {
-  border: $test;
+  // border: $test;
   height: 100vh;
-  min-height: 600px;
+  // min-height: 600px;
   width: 100vw;
   font-family: $font-family;
   font-weight: $font-Weights;
@@ -22,16 +22,43 @@
   }
 
   .left-side {
-    border: $test1;
+    // border: $test2;
     flex: 1;
-    margin-top: 5rem;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    min-width: 500px;
+    justify-content: center;
+    align-items: center;
+    // min-width: 500px;
   }
   .right-side {
-    border: $test2;
+    // border: $test2;
     flex: 1;
   }
+}
+
+@media screen and (max-width: 660px) {
+  .app {
+    height: 100%;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+  
+    .main-bg {
+      background-image: url( '../public/bg-main-mobile.png');
+      height: 40%;
+      width: 100%;
+    }
+  
+    .left-side {
+      height: 250px;
+      display: flex;
+      flex-direction: column-reverse;
+      flex: auto;
+    }
+    .right-side {
+      flex: auto;
+      padding-top: 40px;
+    }
+  }
+  
 }

@@ -1,10 +1,11 @@
 @import  './_variables';
 
 .main-form {
-  border: $test;
+  // border: $test;
   height: 100%;
   width: 100%;
-  min-width: 500px;
+  padding: 20px;
+  // min-width: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -108,4 +109,136 @@
       }
     }
   }
+}
+
+@media screen and (max-width: 900px) {
+  .main-form {
+    padding: 15px;
+  
+    .form {  
+      .label {
+        margin-bottom: 0.2rem;
+      }
+  
+      #card-holder {
+        width: 300px;
+      }
+      #card-num {
+        width: 300px;
+      }
+      #card-exp-m {
+        width: 65px;
+        margin-right: 0.1rem;
+      }
+      #card-exp-y {
+        width: 65px;
+        margin-left: 0.1rem;
+      }
+      #card-cvc {
+        width: 135px;
+      }
+      .btn-confirm {
+        height: 30px;
+        width: 300px;
+        font-size: 1.2rem;
+      }
+      .input {
+        padding-left: 0.4rem;
+        height: 30px;
+        font-size: 1.2rem;
+
+      }
+  
+      .i-error {
+        margin-bottom: 0.8rem;
+  
+        .error {
+          font-size: 0.9rem;
+          margin-top: 0.4rem;
+        }
+      }
+  
+      .form-down {
+        .input-group-l {
+          display: flex;
+          flex-direction: column;
+          margin-right: 0.1rem;
+        }
+        .input-group-r {
+          display: flex;
+          flex-direction: column;
+          margin-left: 0.1rem;
+        }
+      }
+    }
+  }
+  
+}
+
+@media screen and (max-width: 660px) {
+  .main-form {
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-self: center;
+  
+    .form {  
+      .label {
+        margin-bottom: 0.2rem;
+      }
+  
+      #card-holder {
+        width: 300px;
+      }
+      #card-num {
+        width: 300px;
+      }
+      #card-exp-m {
+        width: 65px;
+        margin-right: 0.1rem;
+      }
+      #card-exp-y {
+        width: 65px;
+        margin-left: 0.1rem;
+      }
+      #card-cvc {
+        width: 135px;
+      }
+      .btn-confirm {
+        height: 30px;
+        width: 300px;
+        font-size: 1.2rem;
+      }
+      .input {
+        padding-left: 0.4rem;
+        height: 30px;
+        font-size: 1.2rem;
+
+      }
+  
+      .i-error {
+        margin-bottom: 0.8rem;
+  
+        .error {
+          font-size: 0.9rem;
+          margin-top: 0.4rem;
+        }
+      }
+  
+      .form-down {
+        .input-group-l {
+          display: flex;
+          flex-direction: column;
+          margin-right: 0.1rem;
+        }
+        .input-group-r {
+          display: flex;
+          flex-direction: column;
+          margin-left: 0.1rem;
+        }
+      }
+    }
+  }
+  
 }

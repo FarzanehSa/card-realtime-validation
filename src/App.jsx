@@ -20,8 +20,8 @@ function App() {
     <div className="app">
       <div className="main-bg"></div>
       <div className='left-side'>
-        <CardFront form={form}/>
-        <CardBack form={form}/>
+        <CardFront form={form} />
+        <CardBack form={form} />
       </div>
       <div className='right-side'>
         {confirmed ?

@@ -27,9 +27,9 @@ Users should be able to:
 ### Screenshot
 
 ![active-state](https://github.com/FarzanehSa/card-realtime-validation/blob/master/doc/active-state.png)
-![complete-state](./screenshot.jpg)
-![desktop-design](./screenshot.jpg)
-![mobile-design](./screenshot.jpg)
+![complete-state](https://github.com/FarzanehSa/card-realtime-validation/blob/master/doc/complete-state.png)
+![desktop-design](https://github.com/FarzanehSa/card-realtime-validation/blob/master/doc/desktop-design.png)
+![mobile-design](https://github.com/FarzanehSa/card-realtime-validation/blob/master/doc/mobile-design.png)
 
 ### Links
 
